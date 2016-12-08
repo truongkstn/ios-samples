@@ -64,7 +64,7 @@ namespace Reachability {
 		{
 			if (adHocWiFiNetworkReachability == null) {
 				var ipAddress = new IPAddress (new byte[] { 169, 254, 0, 0 });
-				adHocWiFiNetworkReachability = new NetworkReachability (ipAddress.MapToIPv6 ());
+				adHocWiFiNetworkReachability = new NetworkReachability (ipAddress.MapToIPv4 ());
 				adHocWiFiNetworkReachability.SetNotification (OnChange);
 				adHocWiFiNetworkReachability.Schedule (CFRunLoop.Current, CFRunLoop.ModeDefault);
 			}
@@ -78,7 +78,7 @@ namespace Reachability {
 		{
 			if (defaultRouteReachability == null) {
 				var ipAddress = new IPAddress (0);
-				defaultRouteReachability = new NetworkReachability (ipAddress.MapToIPv6 ());
+				defaultRouteReachability = new NetworkReachability (ipAddress.MapToIPv4 ());
 				defaultRouteReachability.SetNotification (OnChange);
 				defaultRouteReachability.Schedule (CFRunLoop.Current, CFRunLoop.ModeDefault);
 			}
